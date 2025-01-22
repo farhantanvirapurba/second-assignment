@@ -79,6 +79,7 @@ font-size: 20px;
 text-align: center;
 padding: 2rem;
 background: url('/assets/bg.png') no-repeat center/cover ;
+gap: 5px;
 
 }
 .curriculum h2{
@@ -90,12 +91,13 @@ background: url('/assets/bg.png') no-repeat center/cover ;
 .curriculum-cards{
     display: flex;
     justify-content: center;
+    gap: 20px;
 }
 .curriculum-cards div{
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 6px 10px #FBBA56;
-    padding: 1.5rem;
+    padding: 2rem;
     width: 30%;
     text-align: center;
 
@@ -106,7 +108,7 @@ border-radius: 10px;
 }
 .curriculum-cards h3{
     font-size: 1.5rem;
-    margin: 1rem 0;
+    margin: 2rem 0;
 }
 .curriculum-cards p{
     font-size: 1rem;
@@ -294,36 +296,137 @@ margin-top: 20px;
   display: flex;
   gap: 4px;
 }
-/*Responsive Style*/
-/*Small Device*/
-@media screen and (max-width:576px) {
+/* Responsive Adjustments */
+
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
   /* Navbar */
   .Navbar {
-    flex-wrap: nowrap; 
-     justify-content: space-between; 
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
   }
-  .nav-links, .contact-btn {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: flex-start;
   }
-  .logo {
-    font-size: 1.2rem;
+  .contact-btn {
+    align-self: center;
   }
-  .Navbar:after {
-    font-size: 1.5rem;
-    display: inline-block;
+
+  /* Banner Section */
+  .Banner {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
-}
-/*Our Story*/
-/* Responsive Adjustments */
-@media (max-width: 768px) {
+  .banner-content {
+    margin: 20px 0;
+  }
+  .banner-img {
+    max-width: 100%;
+  }
+
+  /* Curriculum Section */
+  .curriculum-cards {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .curriculum-cards div {
+    width: 100%; 
+  }
+
+  /* Our Story Section */
   .story-grid {
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px;
+  }
+
+  /* Footer */
+  .container-2 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .about-school, .keep-in-touch {
+    margin: 10px 0;
+  }
+  .social-icons {
+    margin-top: 15px;
   }
 }
 
+/* For small devices like phones */
+@media (max-width: 576px) {
+  /* Navbar */
+  .Navbar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Banner Section */
+  .Banner {
+    padding: 1rem;
+    grid-template-columns: 1fr;
+  }
+  .banner-content h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Curriculum Section */
+  .curriculum-cards {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .curriculum-cards div {
+    width: 100%; 
+  }
+
+  /* Our Story Section */
+  .story-grid {
+    grid-template-columns: 1fr; 
+    gap: 10px;
+  }
+
+  /* Footer */
+  .container-2 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .about-school, .keep-in-touch {
+    margin: 10px 0;
+  }
+  .social-icons {
+    margin-top: 15px;
+  }
+
+  /* Buttons */
+  .banner-btn,
+  .view-all-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Extra Small Devices */
 @media (max-width: 480px) {
   .story-grid {
     grid-template-columns: 1fr; 
+  }
+  .banner-content h1 {
+    font-size: 1.2rem;
+  }
+  .banner-content p {
+    font-size: 0.9rem;
+  }
+  .curriculum-cards div {
+    padding: 1rem;
   }
 }
