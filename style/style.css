@@ -296,137 +296,195 @@ margin-top: 20px;
   display: flex;
   gap: 4px;
 }
-/* Responsive Adjustments */
+/* Responsive Styles */
 
-/* For tablets and smaller devices */
-@media (max-width: 768px) {
-  /* Navbar */
-  .Navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
+/* Navbar */
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #eef2f3;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+/* Hamburger menu for smaller devices */
+.hamburger {
+  display: none; /* Hidden on larger screens */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  border-radius: 2px;
+}
+
+/* Nav-links visible for larger screens */
+.nav-links {
+  display: flex;
+  list-style-type: none;
+  gap: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* Navbar adjustments for mobile devices */
+  .hamburger {
+    display: flex; /* Show hamburger menu */
   }
+
   .nav-links {
+    display: none; /* Hide links initially */
     flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    align-items: flex-start;
-  }
-  .contact-btn {
-    align-self: center;
+    background-color: #eef2f3;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
-  /* Banner Section */
+  .nav-links.open {
+    display: flex; /* Show links when hamburger menu is clicked */
+  }
+}
+
+/* Banner */
+.Banner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns for larger devices */
+  align-items: center;
+  padding: 20px;
+  background-color: #eef2f3;
+}
+
+.banner-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.banner-btn {
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjustments for tablets and smaller devices */
   .Banner {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Stacks content vertically */
     text-align: center;
   }
+
   .banner-content {
-    margin: 20px 0;
+    margin-top: 20px;
   }
+
   .banner-img {
     max-width: 100%;
+    margin: 20px 0;
   }
+}
 
-  /* Curriculum Section */
+/* Standard Curriculum */
+.curriculum {
+  text-align: center;
+  padding: 20px;
+  background: url('/assets/bg.png') no-repeat center/cover;
+}
+
+.curriculum-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.curriculum-cards div {
+  width: 30%; /* Default width for larger screens */
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  /* Adjustments for tablets */
   .curriculum-cards {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .curriculum-cards div {
-    width: 100%; 
-  }
-
-  /* Our Story Section */
-  .story-grid {
-    grid-template-columns: 1fr 1fr; 
+    flex-direction: column; /* Stacks cards vertically */
     gap: 15px;
   }
 
-  /* Footer */
-  .container-2 {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .about-school, .keep-in-touch {
-    margin: 10px 0;
-  }
-  .social-icons {
-    margin-top: 15px;
-  }
-}
-
-/* For small devices like phones */
-@media (max-width: 576px) {
-  /* Navbar */
-  .Navbar {
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  /* Banner Section */
-  .Banner {
-    padding: 1rem;
-    grid-template-columns: 1fr;
-  }
-  .banner-content h1 {
-    font-size: 1.5rem;
-  }
-
-  /* Curriculum Section */
-  .curriculum-cards {
-    flex-direction: column;
-    gap: 10px;
-  }
   .curriculum-cards div {
-    width: 100%; 
-  }
-
-  /* Our Story Section */
-  .story-grid {
-    grid-template-columns: 1fr; 
-    gap: 10px;
-  }
-
-  /* Footer */
-  .container-2 {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .about-school, .keep-in-touch {
-    margin: 10px 0;
-  }
-  .social-icons {
-    margin-top: 15px;
-  }
-
-  /* Buttons */
-  .banner-btn,
-  .view-all-btn {
-    padding: 10px 20px;
-    font-size: 1rem;
+    width: 100%; /* Full width for mobile devices */
   }
 }
 
-/* Extra Small Devices */
+/* Our Stories */
+.our-stories {
+  padding: 20px;
+  text-align: center;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
+  gap: 20px;
+}
+
+.story {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  /* Adjustments for tablets */
+  .story-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+  }
+}
+
 @media (max-width: 480px) {
+  /* Adjustments for mobile devices */
   .story-grid {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr; /* 1 column for smaller screens */
   }
-  .banner-content h1 {
-    font-size: 1.2rem;
-  }
-  .banner-content p {
-    font-size: 0.9rem;
-  }
-  .curriculum-cards div {
-    padding: 1rem;
+}
+
+/* Footer */
+.container-2 {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping for smaller devices */
+  background-color: rgba(1, 172, 253, 1);
+  padding: 20px;
+}
+
+.about-school,
+.keep-in-touch {
+  flex: 1;
+  margin: 10px 0;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  /* Footer adjustments for tablets */
+  .container-2 {
+    flex-direction: column; /* Stack columns vertically */
+    text-align: center;
   }
 }
